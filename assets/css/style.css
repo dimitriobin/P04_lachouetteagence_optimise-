@@ -183,14 +183,9 @@ blockquote {
     background: top no-repeat
 }
 
-.bloc-bg-texture::before {
-    content: "";
-    background-size: 2px 2px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0
+.bg-dots-bg {
+    background-image: url(../img/dots-bg.png);
+    background-attachment: fixed;
 }
 
 .texture-paper::before {
@@ -336,13 +331,14 @@ blockquote {
     color: #fff !important
 }
 
-.black-background {
-    background-color: rgba(165, 147, 99, .7);
+.white-background {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
     padding: 10px
 }
 
 .bgc-white {
-    background-color: #fff
+    background-color: rgba(255, 255, 255, 0.5)
 }
 
 .bgc-dark-slate-blue {
@@ -354,17 +350,18 @@ blockquote {
 }
 
 .tc-white {
-    color: #f3976c !important
+    color: #000 !important
 }
 
 .btn-atomic-tangerine {
     background: #f3976c;
-    color: #fff !important
+    color: #000 !important;
 }
 
-.btn-atomic-tangerine:hover {
-    background: #c27956 !important;
-    color: #fff !important
+.btn-atomic-tangerine:hover,
+.btn-atomic-tangerine:focus {
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
 .icon-dark-slate-blue {
@@ -560,7 +557,7 @@ a[data-lightbox]:hover img {
 
 /* responsive design */
 @media (min-width:577px) {
-    .black-background {
+    .white-background {
         padding: 50px
     }
 
