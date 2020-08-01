@@ -84,8 +84,17 @@ blockquote {
     position: fixed;
     bottom: 2.5%;
     right: 2.5%;
-    z-index: 1000;
-    font-size: 2.5rem;
+    z-index: 10000;
+    font-size: 3rem;
+    color: black !important;
+    border: 2px solid black !important;
+    border-radius: 50%;
+}
+
+.scrollToTop:focus,
+.scrollToTop:hover {
+    background-color: black !important;
+    color: white !important;
 }
 
 .showScrollTop {
