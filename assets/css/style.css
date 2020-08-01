@@ -111,8 +111,16 @@ blockquote {
     font-weight: bold;
 }
 
+.py-10 {
+    padding: 10px 0;
+}
+
 .my-10 {
     margin: 10px auto;
+}
+
+.my-20 {
+    margin: 20px auto;
 }
 
 .my-40 {
@@ -163,7 +171,9 @@ blockquote {
 }
 
 .icon-md {
-    font-size: 3.5rem !important
+    font-size: 3.5rem !important;
+    padding: 15px;
+    margin: 15px 0;
 }
 
 .icon-lg {
@@ -269,11 +279,11 @@ blockquote {
     font-weight: 700
 }
 
-.social {
+.social,
+.social span {
     max-width: 400px;
     height: auto;
     margin: auto;
-    padding: 10px;
 }
 
 .icons {
@@ -382,6 +392,10 @@ blockquote {
 .nav>li {
     margin-top: 4px;
     text-align: center;
+}
+
+.nav>li>a {
+    padding: 15px !important;
 }
 
 .navbar-toggle {
