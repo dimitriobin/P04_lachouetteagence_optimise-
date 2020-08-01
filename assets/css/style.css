@@ -43,7 +43,8 @@ h3 {
 
 p,
 a {
-    font-size: 1.6rem
+    font-size: 1.6rem;
+    background-color: inherit !important;
 }
 
 header a {
@@ -52,17 +53,19 @@ header a {
 
 a,
 button {
-    transition: all .3s ease-in-out;
-    outline: 0 !important
+    outline: 0 !important;
+    border-radius: 1em !important;
+    border: 3px solid transparent !important;
+    transition: all 0.3s ease-in-out;
 }
 
-a:hover {
-    text-decoration: none;
-    cursor: pointer
-}
-
-button {
-    outline: 0 !important
+a:hover,
+a:focus,
+button:hover,
+button:focus {
+    text-decoration: none !important;
+    cursor: pointer;
+    border-color: black !important;
 }
 
 li {
@@ -259,7 +262,9 @@ blockquote {
 
 .social {
     max-width: 400px;
+    height: auto;
     margin: auto;
+    padding: 10px;
 }
 
 .icons {
@@ -294,7 +299,7 @@ blockquote {
 }
 
 .btn-atomic-tangerine {
-    background: #f3976c;
+    background: #f3976c !important;
     color: #000 !important;
     font-size: 2rem;
 }
@@ -368,11 +373,6 @@ blockquote {
 .nav>li {
     margin-top: 4px;
     text-align: center;
-}
-
-.nav>li a:focus,
-.nav>li a:hover {
-    background: 0 0
 }
 
 .navbar-toggle {
