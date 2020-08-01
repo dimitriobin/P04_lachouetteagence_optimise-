@@ -394,25 +394,26 @@ blockquote {
 a[data-lightbox] {
     position: relative;
     display: block;
-    text-align: center
+    text-align: center;
 }
 
-a[data-lightbox]:hover::before {
+a[data-lightbox]:hover::before,
+a[data-lightbox]:focus::before {
     content: "+";
     font-family: "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
-    font-size: 2rem;
+    font-size: 3.5rem;
     width: 50px;
     height: 50px;
     margin-left: -25px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, .6);
-    color: #fff;
+    background: rgba(0, 0, 0, .6) !important;
+    color: #fff !important;
     font-weight: 100;
     z-index: 1;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    -webkit-transform: translateY(-50%)
+    -webkit-transform: translateY(-50%);
 }
 
 a[data-lightbox]:hover img {
@@ -427,10 +428,6 @@ a[data-lightbox]:hover img {
     padding: 1.5rem;
     color: #fff;
     background: rgba(0, 0, 0, .5);
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    bottom: 5px
 }
 
 .snapshot-lb .lightbox-caption {
@@ -442,9 +439,9 @@ a[data-lightbox]:hover img {
 .next-lightbox {
     font-size: 4rem;
     color: rgba(255, 255, 255, 1) !important;
-    background-color: rgba(0, 0, 0, .2);
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, .7) !important;
+    border-radius: 10px !important;
+    padding: 0.5rem 1rem !important;
     position: absolute;
     top: 35%;
 }
@@ -463,15 +460,16 @@ a[data-lightbox]:hover img {
 .next-lightbox:hover,
 .prev-lightbox:focus,
 .next-lightbox:focus {
-    background-color: rgba(12, 6, 6, 0.8);
+    background-color: rgba(12, 6, 6, 0) !important;
+    color: black !important;
 }
 
 .close-lightbox {
     font-size: 2.5rem;
     border: none;
     color: rgba(255, 255, 255, 1) !important;
-    background-color: rgba(0, 0, 0, .2);
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .7) !important;
+    border-radius: 10px !important;
     padding: 5px 10px;
     position: absolute;
     top: 1%;
@@ -481,7 +479,8 @@ a[data-lightbox]:hover img {
 
 .close-lightbox:hover,
 .close-lightbox:focus {
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: black !important;
 }
 
 
