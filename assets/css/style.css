@@ -51,6 +51,10 @@ header a {
     font-size: 1.3em
 }
 
+a {
+    text-decoration: underline;
+}
+
 a,
 button {
     outline: 0 !important;
@@ -68,9 +72,7 @@ button:focus {
     border-color: black !important;
 }
 
-li {
-    list-style: none
-}
+
 
 blockquote {
     margin: 40px auto;
@@ -78,6 +80,15 @@ blockquote {
 }
 
 /* Utilities */
+
+.table-bordered td,
+.table-bordered th {
+    border: 2px solid #000 !important
+}
+
+.list--unstyled {
+    list-style: none;
+}
 
 .scrollToTop {
     opacity: 0;
@@ -321,6 +332,7 @@ blockquote {
     background: #f3976c !important;
     color: #000 !important;
     font-size: 2rem;
+    text-decoration: none;
 }
 
 .btn-atomic-tangerine:hover,
@@ -396,6 +408,7 @@ blockquote {
 
 .nav>li>a {
     padding: 15px !important;
+    text-decoration: none;
 }
 
 .navbar-toggle {
