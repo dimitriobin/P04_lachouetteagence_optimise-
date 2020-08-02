@@ -41,6 +41,10 @@ h3 {
     font-weight: 600
 }
 
+h4 {
+    font-weight: bold;
+}
+
 p,
 a {
     font-size: 1.6rem;
@@ -80,6 +84,8 @@ blockquote {
 }
 
 /* Utilities */
+
+
 
 .table-bordered td,
 .table-bordered th {
@@ -333,6 +339,7 @@ blockquote {
     color: #000 !important;
     font-size: 2rem;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .btn-atomic-tangerine:hover,
@@ -623,5 +630,9 @@ a[data-lightbox]:hover img {
     .border {
         border-left: 7px double black;
         padding: 60px 0;
+    }
+
+    .mb-100 {
+        margin-bottom: 100px;
     }
 }
