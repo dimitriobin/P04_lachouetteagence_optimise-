@@ -11,6 +11,7 @@ body {
 }
 
 .btn,
+small,
 a,
 h1,
 h2,
@@ -430,6 +431,14 @@ blockquote {
 .navbar-toggle .icon-bar {
     background-color: rgba(0, 0, 0, .5);
     width: 26px
+}
+
+caption {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 1.5rem !important;
+    color: #000 !important;
+    text-align: center;
 }
 
 /* Homepage */
