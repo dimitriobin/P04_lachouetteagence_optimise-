@@ -30,29 +30,11 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/et-line.css">
 
 
-	<script src="../assets/js/jquery-2.1.0.js"></script>
-	<script src="../assets/js/bootstrap.js"></script>
-	<script src="../assets/js/blocs.js"></script>
-	<script src="../assets/js/jqBootstrapValidation.js"></script>
-	<script src="../assets/js/formHandler.js"></script>
+
 	<title>Contacter La Chouette Agence - Entreprise de Web Design à Lyon</title>
 
 
-	<!-- Analytics -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173613199-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-173613199-1');
-	</script>
-
-	<!-- Analytics END -->
 
 </head>
 
@@ -71,7 +53,8 @@
 					<div class="navbar-header">
 						<a role="button" class="navbar-brand" aria-label="Retour sur la page d'accueil"
 							href="../index.html">
-							<img src="../assets/img/la-chouette-agence.png"
+							<img srcset="../assets/img/xs/la-chouette-agence_xs.png 225w, ../assets/img/lg/la-chouette-agence_300.png 300w"
+								sizes="(max-width: 991px) 225px, 300px" src="../assets/img/xs/la-chouette-agence_xs.png"
 								alt="La chouette agence, Entreprise de web design à Lyon"
 								title="Logo de la chouette agence" aria-label="Logo" />
 						</a>
@@ -209,6 +192,27 @@
 	<!-- Principal conteneur END -->
 
 
+	<!-- Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173613199-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-173613199-1');
+	</script>
+	<!-- Analytics END -->
+
+	<!-- scripts -->
+	<script src="../assets/js/jquery-2.1.0.js" defer></script>
+	<script src="../assets/js/bootstrap.js" defer></script>
+	<script src="../assets/js/blocs.js" defer></script>
+	<script src="../assets/js/jqBootstrapValidation.js" defer></script>
+	<script src="../assets/js/formHandler.js" defer></script>
 </body>
 
 </html>
