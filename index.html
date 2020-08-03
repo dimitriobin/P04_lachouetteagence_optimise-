@@ -59,13 +59,15 @@
 	<main class="page-container ">
 
 		<!-- bloc-0 -->
-		<header class="bloc bgc-white l-bloc container" id="bloc-0">
+		<header class="bloc bgc-white container" id="bloc-0">
 			<div class=" bloc-sm">
 				<nav class="navbar row">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="index.html">
+						<a role="button" class="navbar-brand" aria-label="Retour sur la page d'accueil"
+							href="index.html">
 							<img src="assets/img/la-chouette-agence.png"
-								alt="La chouette agence, Entreprise de web design à Lyon" height="40" />
+								alt="La chouette agence, Entreprise de web design à Lyon"
+								title="Logo de la chouette agence" aria-label="Logo" />
 						</a>
 						<button id="nav-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
 							data-target=".navbar-1">
@@ -78,10 +80,16 @@
 					<div class="collapse navbar-collapse navbar-1">
 						<ul class="site-navigation nav navbar-nav">
 							<li>
-								<a href="index.html">Accueil</a>
+								<a href="index.html" aria-label="Naviguer vers la page d'accueil"
+									accesskey="h">Accueil</a>
 							</li>
 							<li>
-								<a href="pages-html/page2.html">Contact</a>
+								<a href="pages-html/page2.html" aria-label="Naviguer vers la page de contact"
+									accesskey="c">Contact</a>
+							</li>
+							<li>
+								<a href="pages-html/accessibilite.html"
+									aria-label="Naviguer vers la page d'accessibilité" accesskey="a">Accessibilité</a>
 							</li>
 						</ul>
 					</div>
@@ -91,14 +99,15 @@
 		<!-- bloc-0 END -->
 
 		<!-- bloc-1-presentation -->
-		<section class="bloc bgc-dark-slate-blue bg-banniere d-bloc bg-t-edge bloc-bg-texture texture-paper b-parallax"
-			id="bloc-1-hero">
+		<section role="banner" aria-labelledby="topTitle"
+			class="bloc bg-banniere bg-t-edge bloc-bg-texture texture-paper b-parallax" id="bloc-1-hero">
 			<div class=" bloc-lg">
 				<div class="row tight-width-whitespace">
-					<div class="col-sm-12">
-						<img src="assets/img/logo.png" class="center-block" width="100"
-							alt="La chouette agence, entreprise de web design à Lyon" />
-						<h1 class="text-center hero-bloc-text tc-white ">
+					<div class="col-sm-12 bgc-white bloc-sm">
+						<img src="assets/img/logo.png" class="center-block"
+							alt="La chouette agence, entreprise de web design à Lyon"
+							title="Logo de la chouette agence" />
+						<h1 class="text-center" id="topTitle">
 							La chouette agence, entreprise de web design à Lyon.
 						</h1>
 					</div>
@@ -108,9 +117,10 @@
 		<!-- bloc-1-presentation END -->
 
 		<!-- bloc-2-services -->
-		<section class="bloc bgc-white bloc-md text-center container" id="bloc-2-services">
+		<section role="doc-part" aria-labelledby="servicesHeaderTitle"
+			class="bloc bgc-white bloc-md text-center container" id="bloc-2-services">
 			<header class="row my-40">
-				<h2 class="col-sm-12">
+				<h2 class="col-sm-12" id="servicesHeaderTitle">
 					La chouette agence est une agence de web design qui aide les entreprises à devenir attractives et
 					visibles sur internet.
 				</h2>
@@ -147,7 +157,7 @@
 					</p>
 				</article>
 			</div>
-			<footer class="row">
+			<footer aria-label="Commentaire d'un client" class="row">
 				<blockquote class="col-xs-12 col-md-6 col-md-offset-3">
 					<p>"La chouette agence est une excellente agence ! Les web designers ont réussi à capturer l'essence
 						de notre entreprise et à l'intégrer à notre site. Cela nous a aidé à doubler nos ventes en ligne
@@ -159,18 +169,18 @@
 		<!-- bloc-2-services END -->
 
 		<!-- bloc-3-what-i-do -->
-		<section
-			class="bloc tc-white bgc-atomic-tangerine bg-presentation d-bloc bloc-bg-texture texture-paper b-parallax"
+		<section role="doc-part" aria-labelledby="presentationTitle" aria-describedby="presentationDescription"
+			class="bloc bgc-atomic-tangerine bg-presentation bloc-bg-texture texture-paper b-parallax"
 			id="bloc-3-what-i-do">
 			<div class=" bloc-lg">
-				<div class="row tight-width-whitespace black-background text-center">
+				<div class="row tight-width-whitespace white-background text-center">
 					<div class="col-sm-12">
-						<h2 class="mg-md tc-white ">
+						<h2 class="mg-md" id="presentationTitle">
 							Nous souhaitons aider les entreprises de la région Lyonnaise à se développer et à connaître
 							le succès. Nous travaillons pour aider les entreprises locales à attirer de nouveaux
 							clients.
 						</h2>
-						<p class="white">
+						<p id="presentationDescription">
 							Nous aimons collaborer avec des entrepreneurs créatifs et des entreprises locale, qu’elles
 							aient besoin de créer un site de A à Z ou de donner un coup de jeune à leur site. Que vous
 							ayez besoin d’une identité visuelle complète ou d’une refonte de votre site, n’hésitez pas à
@@ -184,19 +194,22 @@
 		<!-- bloc-3-what-i-do END -->
 
 		<!-- bloc-4-portfolio -->
-		<section class="bloc bgc-white bg-lines-h2-bg bg-repeat l-bloc text-center  my-40" id="bloc-4-portfolio">
+		<section role="doc-example" aria-labelledby="caseStudiesTitle"
+			class="bloc bgc-white bg-lines-h2-bg bg-repeat text-center  my-40" id="bloc-4-portfolio">
 			<header class="row">
-				<h2 class="col-sm-12 my-40">
+				<h2 class="col-sm-12 my-40" id="caseStudiesTitle">
 					Nous travaillons avec beaucoup de clients,
 					<br>voici nos réalisations.
 				</h2>
 			</header>
 			<div class="row tight-width-whitespace portfolio-row">
 				<article class="col-sm-6">
-					<a href="#" data-lightbox="assets/img/journaux.jpg" data-gallery-id="gallery-1"
+					<a aria-label="Lien vers la galerie des travaux de l'agence" href="#"
+						data-lightbox="assets/img/journaux.jpg" data-gallery-id="gallery-1"
 						data-caption="Refonte d'un site web pour un journal local" data-frame="snapshot-lb">
-						<img src="assets/img/journaux.jpg" alt="Des journaux de diffèrentes couleurs mx-auto"
-							class="img-responsive portfolio-thumb" />
+						<img src="assets/img/journaux.jpg" alt="Des journaux de diffèrentes couleurs"
+							title="Refonte d'un site web pour un journal local"
+							class="img-responsive portfolio-thumb mx-auto" />
 					</a>
 					<h3 class="mg-md">
 						Refonte d'un site web pour un journal local
@@ -206,10 +219,12 @@
 					</p>
 				</article>
 				<article class="col-sm-6">
-					<a href="#" data-lightbox="assets/img/photographe.jpg" data-gallery-id="gallery-1"
+					<a aria-label="Lien vers la galerie des travaux de l'agence" href="#"
+						data-lightbox="assets/img/photographe.jpg" data-gallery-id="gallery-1"
 						data-caption="Création d'un site web pour photographes" data-frame="snapshot-lb">
 						<img src="assets/img/photographe.jpg" class="img-responsive portfolio-thumb mx-auto"
-							alt="Une photographe prenant une photographie" />
+							alt="Une photographe prenant une photographie"
+							title="Une photographe prenant une photographie" />
 					</a>
 					<h3 class="mg-md">
 						Création d'un site web pour photographes
@@ -221,10 +236,12 @@
 			</div>
 			<div class="row tight-width-whitespace portfolio-row">
 				<article class="col-sm-6">
-					<a href="#" data-lightbox="assets/img/materiel_photographie.bmp" data-gallery-id="gallery-1"
+					<a aria-label="Lien vers la galerie des travaux de l'agence" href="#"
+						data-lightbox="assets/img/materiel_photographie.bmp" data-gallery-id="gallery-1"
 						data-caption="Création d'un site internet pour un voyageur" data-frame="snapshot-lb">
 						<img src="assets/img/materiel_photographie.bmp" class="img-responsive portfolio-thumb mx-auto"
-							alt="Du matériel de photographie pour photographe nomade" />
+							alt="Du matériel de photographie pour photographe nomade"
+							title="Du matériel de photographie pour photographe nomade" />
 					</a>
 					<h3 class="mg-md">
 						Création d'un site internet pour un voyageur
@@ -235,10 +252,12 @@
 					</p>
 				</article>
 				<article class="col-sm-6">
-					<a href="#" data-lightbox="assets/img/preparation_mariage.bmp" data-gallery-id="gallery-1"
+					<a aria-label="Lien vers la galerie des travaux de l'agence" href="#"
+						data-lightbox="assets/img/preparation_mariage.bmp" data-gallery-id="gallery-1"
 						data-caption="Conception d'un site pour une agence de mariage" data-frame="snapshot-lb">
 						<img src="assets/img/preparation_mariage.bmp" class="img-responsive portfolio-thumb mx-auto"
-							alt="Une table avec un ordinateur et des invitations pour un mariage" />
+							alt="Une table avec un ordinateur et des invitations pour un mariage"
+							title="Une table avec un ordinateur et des invitations pour un mariage" />
 					</a>
 					<h3 class="mg-md">
 						Conception d'un site pour une agence de mariage
@@ -253,47 +272,66 @@
 		<!-- bloc-4-portfolio END -->
 
 		<!-- bloc-5-cta -->
-		<section class="bloc bgc-dark-slate-blue bg-banniere d-bloc bloc-bg-texture texture-paper" id="bloc-5-cta">
+		<section role="doc-epilogue" aria-labelledby="epilogueTitle" class="bloc bg-banniere texture-paper"
+			id="bloc-5-cta">
 			<div class=" bloc-lg">
-				<div class="row text-center">
-					<h2 class="col-sm-12 mg-md tc-white">
+				<div class="row text-center tight-width-whitespace white-background">
+					<h2 class="col-sm-12 mg-md" id="epilogueTitle">
 						Prêt pour redonner vie à votre projet ?<br>Contactez notre équipe !
 					</h2>
-					<a href="pages-html/page2.html"
-						class="btn btn-atomic-tangerine btn-clean btn-rd btn-lg cta-hero">Contact</a>
+					<a aria-label="Naviguer vers la page de contact de la chouette agence" href="pages-html/page2.html"
+						class="btn-atomic-tangerine btn-lg btn-rd">Contact</a>
 				</div>
 			</div>
 		</section>
 		<!-- bloc-5-cta END -->
 
+		<!-- ScrollToTop Button -->
+		<a role="link" class="btn btn-d scrollToTop" aria-label="Retourner au début de la page"
+			onclick="scrollToTarget('1')" tabindex="0"><span class="fa fa-chevron-up"></span></a>
+		<!-- ScrollToTop Button END-->
+
 		<!-- Footer - bloc-8 -->
-		<footer class="bloc bgc-atomic-tangerine d-bloc" id="bloc-8">
+		<footer role="doc-footnote" aria-label="Informations complémentaires" aria-describedby="footerDescription"
+			class="bloc bgc-atomic-tangerine" id="bloc-8">
 			<div class=" bloc-sm">
-				<p class="text-center white">
-					La chouette agence - Entreprise de web design basée à Lyon.
-				</p>
-				<div class="row row-no-gutters social text-center">
-					<div class="col-sm-3">
-						<a class="social" href="twitter.com"><span class="fa fa-twitter icon-md my-10"></span></a>
+				<h2 class="text-center bold">
+					<small>La chouette agence - Entreprise de web design basée à Lyon.</small>
+				</h2>
+				<div class="row social text-center">
+					<p class="sr-only" id="footerDescription">Voici la liste des liens vers nos réseaux sociaux :</p>
+					<div class="col-sm-3 my-20">
+						<a aria-label="Notre profil Twitter" class="icon-md" href="twitter.com"><span
+								class="fa fa-twitter"></span></a>
 					</div>
-					<div class="col-sm-3">
-						<a class="social" href="facebook.com"><span class="fa fa-facebook icon-md my-10"></span></a>
+					<div class="col-sm-3 my-20">
+						<a aria-label="Notre profil Facebook" class="icon-md" href="facebook.com"><span
+								class="fa fa-facebook"></span></a>
 					</div>
-					<div class="col-sm-3">
-						<a class="social" href="dribbble.com"><span class="fa fa-dribbble icon-md my-10"></span></a>
+					<div class="col-sm-3 my-20">
+						<a aria-label="Notre profil Dribbble" class="icon-md" href="dribbble.com"><span
+								class="fa fa-dribbble"></span></a>
 					</div>
-					<div class="col-sm-3">
-						<a class="social" href="instagram.com"><span class="fa fa-instagram icon-md my-10"></span></a>
+					<div class="col-sm-3 my-20">
+						<a aria-label="Notre profil Instagram" class="icon-md" href="instagram.com"><span
+								class="fa fa-instagram"></span></a>
 					</div>
 				</div>
 				<div class="row my-10">
 					<div class="col-sm-4">
-						<p>Partenaires</p>
+						<h3 class="bold">Partenaires</h3>
 						<ul>
-							<li><a href="https://www.lyon-entreprises.com/">Lyon-entreprises</a></li>
-							<li><a href="https://www.lyonweb.net/">Le guide web lyonnais</a></li>
-							<li><a href="https://69pixl.com/">69pixl</a></li>
-							<li><a href="https://www.toolyon.com/medias-lyonnais/">Toolyon - Média lyonnais</a></li>
+							<li class="my-10"><a aria-label="Notre partenaire Lyon-entreprise" class="py-10"
+									href="https://www.lyon-entreprises.com/">Lyon-entreprises</a></li>
+							<li class="my-10"><a aria-label="Notre partenaire Lyon web" class="py-10"
+									href="https://www.lyonweb.net/">Le guide web lyonnais</a>
+							</li>
+							<li class="my-10"><a aria-label="Notre partenaire 69 pixel" class="py-10"
+									href="https://69pixl.com/">69pixl</a></li>
+							<li class="my-10"><a aria-label="Notre partenaire Toolyon" class="py-10"
+									href="https://www.toolyon.com/medias-lyonnais/">Toolyon -
+									Média
+									lyonnais</a></li>
 						</ul>
 					</div>
 				</div>

@@ -11,6 +11,7 @@ body {
 }
 
 .btn,
+small,
 a,
 h1,
 h2,
@@ -24,56 +25,124 @@ p {
     color: #000 !important
 }
 
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
 h2 {
-    font-size: 22px;
-    line-height: 1.4em
+    font-size: 2.5rem;
+    line-height: 1.4em;
+    font-weight: bold;
 }
 
 h3 {
-    font-size: 15px;
+    font-size: 1.7rem;
     text-transform: uppercase;
-    font-weight: 700
+    font-weight: 600
 }
 
-p {
-    font-size: 1.1em
+h4 {
+    font-weight: bold;
+}
+
+p,
+a {
+    font-size: 1.6rem;
+    background-color: inherit !important;
 }
 
 header a {
-    font-size: 1.1em
+    font-size: 1.3em
+}
+
+a {
+    text-decoration: underline;
 }
 
 a,
 button {
-    transition: all .3s ease-in-out;
-    outline: 0 !important
+    outline: 0 !important;
+    border-radius: 1em !important;
+    border: 3px solid transparent !important;
+    transition: all 0.3s ease-in-out;
 }
 
-a:hover {
-    text-decoration: none;
-    cursor: pointer
+a:hover,
+a:focus,
+button:hover,
+button:focus {
+    text-decoration: none !important;
+    cursor: pointer;
+    border-color: black !important;
 }
 
-button {
-    outline: 0 !important
-}
 
-li {
-    list-style: none
-}
 
 blockquote {
     margin: 40px auto;
+    font-style: italic;
 }
 
 /* Utilities */
+
+
+
+.table-bordered td,
+.table-bordered th {
+    border: 2px solid #000 !important
+}
+
+.list--unstyled {
+    list-style: none;
+}
+
+.scrollToTop {
+    opacity: 0;
+    position: fixed;
+    bottom: 2.5%;
+    right: 2.5%;
+    z-index: 10000;
+    font-size: 3rem;
+    color: black !important;
+    border: 2px solid black !important;
+    border-radius: 50%;
+}
+
+.scrollToTop:focus,
+.scrollToTop:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+.showScrollTop {
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+
+.border {
+    border-left: none;
+    padding: 30px 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.py-10 {
+    padding: 10px 0;
+}
 
 .my-10 {
     margin: 10px auto;
 }
 
+.my-20 {
+    margin: 20px auto;
+}
+
 .my-40 {
-    margin: 40px auto;
+    margin: 40px auto 20px;
 }
 
 .mx-auto {
@@ -120,11 +189,13 @@ blockquote {
 }
 
 .icon-md {
-    font-size: 3.5rem !important
+    font-size: 3.5rem !important;
+    padding: 15px;
+    margin: 15px 0;
 }
 
 .icon-lg {
-    font-size: 60px !important
+    font-size: 6rem !important
 }
 
 .sm-shadow {
@@ -183,14 +254,9 @@ blockquote {
     background: top no-repeat
 }
 
-.bloc-bg-texture::before {
-    content: "";
-    background-size: 2px 2px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0
+.bg-dots-bg {
+    background-image: url(../img/dots-bg.png);
+    background-attachment: fixed;
 }
 
 .texture-paper::before {
@@ -198,93 +264,6 @@ blockquote {
     background-size: 280px 280px
 }
 
-.d-bloc {
-    color: rgba(255, 255, 255, .7)
-}
-
-.d-bloc button:hover {
-    color: rgba(255, 255, 255, .9)
-}
-
-.d-bloc .a-btn,
-.d-bloc .navbar a,
-.d-bloc .navbar-brand,
-.d-bloc a .icon-lg,
-.d-bloc a .icon-md,
-.d-bloc a .icon-sm,
-.d-bloc h1 a,
-.d-bloc h2 a,
-.d-bloc h3 a,
-.d-bloc h4 a,
-.d-bloc h5 a,
-.d-bloc h6 a,
-.d-bloc p a {
-    color: rgba(255, 255, 255, .6)
-}
-
-.d-bloc .a-btn:hover,
-.d-bloc .navbar a:hover,
-.d-bloc .navbar-brand:hover,
-.d-bloc a:hover .icon-lg,
-.d-bloc a:hover .icon-md,
-.d-bloc a:hover .icon-sm,
-.d-bloc h1 a:hover,
-.d-bloc h2 a:hover,
-.d-bloc h3 a:hover,
-.d-bloc h4 a:hover,
-.d-bloc h5 a:hover,
-.d-bloc h6 a:hover,
-.d-bloc p a:hover {
-    color: rgba(255, 255, 255, 1)
-}
-
-.d-bloc .navbar-toggle .icon-bar {
-    background: rgba(255, 255, 255, 1)
-}
-
-.l-bloc {
-    color: rgba(0, 0, 0, .5)
-}
-
-.l-bloc button:hover {
-    color: rgba(0, 0, 0, .7)
-}
-
-.l-bloc .a-btn,
-.l-bloc .navbar a,
-.l-bloc .navbar-brand,
-.l-bloc a .icon-lg,
-.l-bloc a .icon-md,
-.l-bloc a .icon-sm,
-.l-bloc h1 a,
-.l-bloc h2 a,
-.l-bloc h3 a,
-.l-bloc h4 a,
-.l-bloc h5 a,
-.l-bloc h6 a,
-.l-bloc p a {
-    color: rgba(0, 0, 0, .6)
-}
-
-.l-bloc .a-btn:hover,
-.l-bloc .navbar a:hover,
-.l-bloc .navbar-brand:hover,
-.l-bloc a:hover .icon-lg,
-.l-bloc a:hover .icon-md,
-.l-bloc a:hover .icon-sm,
-.l-bloc h1 a:hover,
-.l-bloc h2 a:hover,
-.l-bloc h3 a:hover,
-.l-bloc h4 a:hover,
-.l-bloc h5 a:hover,
-.l-bloc h6 a:hover,
-.l-bloc p a:hover {
-    color: rgba(0, 0, 0, 1)
-}
-
-.l-bloc .navbar-toggle .icon-bar {
-    color: rgba(0, 0, 0, .6)
-}
 
 .row-no-gutters {
     margin-right: 0;
@@ -301,10 +280,6 @@ blockquote {
     max-width: 1200px
 }
 
-.hero-bloc-text {
-    font-size: 38px
-}
-
 
 .tight-width-whitespace {
     max-width: 600px;
@@ -318,13 +293,15 @@ blockquote {
     color: #fff !important;
     text-transform: uppercase;
     padding: 12px 28px 12px 28px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700
 }
 
-.social {
+.social,
+.social span {
     max-width: 400px;
-    margin: auto auto auto auto
+    height: auto;
+    margin: auto;
 }
 
 .icons {
@@ -336,13 +313,14 @@ blockquote {
     color: #fff !important
 }
 
-.black-background {
-    background-color: rgba(165, 147, 99, .7);
+.white-background {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
     padding: 10px
 }
 
 .bgc-white {
-    background-color: #fff
+    background-color: rgba(255, 255, 255, 0.5)
 }
 
 .bgc-dark-slate-blue {
@@ -354,17 +332,21 @@ blockquote {
 }
 
 .tc-white {
-    color: #f3976c !important
+    color: #000 !important
 }
 
 .btn-atomic-tangerine {
-    background: #f3976c;
-    color: #fff !important
+    background: #f3976c !important;
+    color: #000 !important;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.btn-atomic-tangerine:hover {
-    background: #c27956 !important;
-    color: #fff !important
+.btn-atomic-tangerine:hover,
+.btn-atomic-tangerine:focus {
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
 .icon-dark-slate-blue {
@@ -399,7 +381,7 @@ blockquote {
 .navbar-brand {
     height: auto;
     padding: 3px 15px;
-    font-size: 25px;
+    font-size: 1.6rem;
     font-weight: 400;
     font-weight: 600;
     line-height: 44px
@@ -432,9 +414,9 @@ blockquote {
     text-align: center;
 }
 
-.nav>li a:focus,
-.nav>li a:hover {
-    background: 0 0
+.nav>li>a {
+    padding: 15px !important;
+    text-decoration: none;
 }
 
 .navbar-toggle {
@@ -451,30 +433,39 @@ blockquote {
     width: 26px
 }
 
+caption {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 1.5rem !important;
+    color: #000 !important;
+    text-align: center;
+}
+
 /* Homepage */
 
 a[data-lightbox] {
     position: relative;
     display: block;
-    text-align: center
+    text-align: center;
 }
 
-a[data-lightbox]:hover::before {
+a[data-lightbox]:hover::before,
+a[data-lightbox]:focus::before {
     content: "+";
     font-family: "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
-    font-size: 32px;
+    font-size: 3.5rem;
     width: 50px;
     height: 50px;
     margin-left: -25px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, .6);
-    color: #fff;
+    background: rgba(0, 0, 0, .6) !important;
+    color: #fff !important;
     font-weight: 100;
     z-index: 1;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    -webkit-transform: translateY(-50%)
+    -webkit-transform: translateY(-50%);
 }
 
 a[data-lightbox]:hover img {
@@ -489,10 +480,6 @@ a[data-lightbox]:hover img {
     padding: 1.5rem;
     color: #fff;
     background: rgba(0, 0, 0, .5);
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    bottom: 5px
 }
 
 .snapshot-lb .lightbox-caption {
@@ -504,9 +491,9 @@ a[data-lightbox]:hover img {
 .next-lightbox {
     font-size: 4rem;
     color: rgba(255, 255, 255, 1) !important;
-    background-color: rgba(0, 0, 0, .2);
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, .7) !important;
+    border-radius: 10px !important;
+    padding: 0.5rem 1rem !important;
     position: absolute;
     top: 35%;
 }
@@ -525,15 +512,16 @@ a[data-lightbox]:hover img {
 .next-lightbox:hover,
 .prev-lightbox:focus,
 .next-lightbox:focus {
-    background-color: rgba(12, 6, 6, 0.8);
+    background-color: rgba(12, 6, 6, 0) !important;
+    color: black !important;
 }
 
 .close-lightbox {
     font-size: 2.5rem;
     border: none;
     color: rgba(255, 255, 255, 1) !important;
-    background-color: rgba(0, 0, 0, .2);
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .7) !important;
+    border-radius: 10px !important;
     padding: 5px 10px;
     position: absolute;
     top: 1%;
@@ -543,7 +531,8 @@ a[data-lightbox]:hover img {
 
 .close-lightbox:hover,
 .close-lightbox:focus {
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: black !important;
 }
 
 
@@ -560,16 +549,46 @@ a[data-lightbox]:hover img {
 
 /* responsive design */
 @media (min-width:577px) {
-    .black-background {
+    .white-background {
         padding: 50px
     }
 
     .bloc-lg {
         padding: 50px 25px
     }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    .icon-md {
+        font-size: 4rem !important
+    }
 }
 
 @media (min-width:768px) {
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    p,
+    a {
+        font-size: 1.7rem;
+    }
+
     .site-navigation {
         position: absolute;
         top: 50%;
@@ -603,5 +622,26 @@ a[data-lightbox]:hover img {
 
     .bloc-lg {
         padding: 100px 50px
+    }
+
+    .icon-lg {
+        font-size: 7rem !important
+    }
+
+    .btn-atomic-tangerine {
+        font-size: 2.5rem;
+    }
+
+    .icon-md {
+        font-size: 4.5rem !important
+    }
+
+    .border {
+        border-left: 7px double black;
+        padding: 60px 0;
+    }
+
+    .mb-100 {
+        margin-bottom: 100px;
     }
 }
