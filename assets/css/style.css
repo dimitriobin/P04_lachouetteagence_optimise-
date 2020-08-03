@@ -359,11 +359,14 @@ blockquote {
 }
 
 .bg-banniere {
-    background-image: url(../img/la-chouette-agence-banniere.jpg)
+    background-image: url(../img/xs/la-chouette-agence-banniere_576.jpg);
+    background-position: center;
+    background-size: cover !important;
 }
 
 .bg-presentation {
-    background-image: url(../img/image-de-presentation.bmp)
+    background-image: url(../img/xs/image-de-presentation_576.jpg);
+    background-position: center;
 }
 
 .img-responsive {
@@ -548,7 +551,15 @@ a[data-lightbox]:hover img {
 
 
 /* responsive design */
-@media (min-width:577px) {
+@media screen and (min-width:577px) {
+    .bg-banniere {
+        background-image: url(../img/sm/la-chouette-agence-banniere_767.jpg)
+    }
+
+    .bg-presentation {
+        background-image: url(../img/sm/image-de-presentation_767.jpg)
+    }
+
     .white-background {
         padding: 50px
     }
@@ -574,7 +585,7 @@ a[data-lightbox]:hover img {
     }
 }
 
-@media (min-width:768px) {
+@media screen and (min-width:768px) {
 
     h1 {
         font-size: 4rem;
@@ -588,6 +599,15 @@ a[data-lightbox]:hover img {
     a {
         font-size: 1.7rem;
     }
+
+    .bg-banniere {
+        background-image: url(../img/md/la-chouette-agence-banniere_991.jpg)
+    }
+
+    .bg-presentation {
+        background-image: url(../img/md/image-de-presentation_991.jpg)
+    }
+
 
     .site-navigation {
         position: absolute;
@@ -643,5 +663,25 @@ a[data-lightbox]:hover img {
 
     .mb-100 {
         margin-bottom: 100px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .bg-banniere {
+        background-image: url(../img/lg/la-chouette-agence-banniere_1199.jpg)
+    }
+
+    .bg-presentation {
+        background-image: url(../img/lg/image-de-presentation_1199.jpg)
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .bg-banniere {
+        background-image: url(../img/xl/la-chouette-agence-banniere_1920.jpg);
+    }
+
+    .bg-presentation {
+        background-image: url(../img/xl/image-de-presentation_1920.jpg)
     }
 }
