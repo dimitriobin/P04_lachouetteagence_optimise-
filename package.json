@@ -1,0 +1,23 @@
+{
+  "name": "lachouetteagence_optimise-",
+  "version": "1.0.0",
+  "description": "https://dimitriobin.github.io/lachouetteagence_optimise-/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimitriobin/lachouetteagence_optimise-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimitriobin/lachouetteagence_optimise-/issues"
+  },
+  "homepage": "https://dimitriobin.github.io/P04_lachouetteagence_optimise-/",
+  "dependencies": {
+    "wicg-inert": "^3.1.1"
+  }
+}
