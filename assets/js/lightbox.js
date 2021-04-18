@@ -18,11 +18,7 @@ class Lightbox {
     this.dataset = data;
     this.gallery = gallery;
     this.element = this.buildDOM(data);
-    this.focusable = this.element.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-    );
-    this.firstFocusable = this.focusable[0];
-    this.lastFocusable = this.focusable[this.focusable.length - 1];
+    this.setFocusable();
     // Put the modal in the DOM
     document.body.appendChild(this.element);
     // Deal with keyboard events
@@ -41,32 +37,25 @@ class Lightbox {
     dom.setAttribute("role", "dialog");
 
     dom.innerHTML = `
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog" role="document" aria-labeled="modalTitle">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close-lightbox" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">${data.caption}</h4>
+            <button class="close-lightbox" data-dismiss="modal" aria-label="Fermer la fenêtre modale"><span aria-hidden="true">&times;</span></button>
+            <h4 id="modalTitle" class="modal-title">${data.caption}</h4>
           </div>
           <div class="modal-body">
-            <button class="prev-lightbox" aria-label="précédent" tabindex="0"><span class="fa fa-chevron-left"></span></button>
+            <button class="prev-lightbox" aria-label="précédent" tabindex="0"><span aria-hidden="true" class="fa fa-chevron-left"></span></button>
             <img
               src="${data.lightbox}"
               class="img-responsive portfolio-thumb mx-auto"
               alt="${data.caption}"
               title="${data.caption}"
             />
-            <button class="next-lightbox" aria-label="suivant" tabindex="0"><span class="fa fa-chevron-right"></span></button>
+            <button class="next-lightbox" aria-label="suivant" tabindex="0"><span aria-hidden="true" class="fa fa-chevron-right"></span></button>
           </div>
         </div>
       </div>
     `;
-
-    if (this.gallery[0] === data) {
-      dom.querySelector(".prev-lightbox").hidden = true;
-    }
-    if (this.gallery[this.gallery.length - 1] === data) {
-      dom.querySelector(".next-lightbox").hidden = true;
-    }
 
     dom
       .querySelector(".close-lightbox")
@@ -77,10 +66,27 @@ class Lightbox {
     dom
       .querySelector(".next-lightbox")
       .addEventListener("click", this.next.bind(this));
+
+    if (this.gallery[0] === data) {
+      dom.querySelector(".prev-lightbox").remove();
+    }
+    if (this.gallery[this.gallery.length - 1] === data) {
+      dom.querySelector(".next-lightbox").remove();
+    }
     return dom;
   }
 
+  setFocusable() {
+    this.focusable = this.element.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    this.firstFocusable = this.focusable[0];
+    this.lastFocusable = this.focusable[this.focusable.length - 1];
+  }
+
   onKeyDown(e) {
+    const firstElement = this.gallery[0] === this.dataset;
+    const lastElement = this.gallery[this.gallery.length - 1] === this.dataset;
     switch (e.key) {
       case "Escape":
         this.close(e);
@@ -90,12 +96,11 @@ class Lightbox {
         this.loop(e);
         break;
 
-      case this.gallery[0] !== this.dataset && "ArrowLeft":
+      case !firstElement && "ArrowLeft":
         this.prev(e);
         break;
 
-      case this.gallery[this.gallery.length - 1] !== this.dataset &&
-        "ArrowRight":
+      case !lastElement && "ArrowRight":
         this.next(e);
         break;
 
@@ -130,8 +135,7 @@ class Lightbox {
 
   prev(e) {
     e.preventDefault();
-    const caption = this.dataset["caption"];
-    let index = this.gallery.findIndex((item) => item["caption"] === caption);
+    let index = this.gallery.findIndex((item) => item === this.dataset);
     this.dataset = this.gallery[index - 1];
     this.updateDOM(this.dataset);
   }
@@ -143,13 +147,30 @@ class Lightbox {
     this.element.querySelector(".modal-body img").alt = data["caption"];
 
     if (this.gallery[0] === data) {
-      this.element.querySelector(".prev-lightbox").hidden = true;
+      this.element.querySelector(".prev-lightbox").remove();
     } else if (this.gallery[this.gallery.length - 1] === data) {
-      this.element.querySelector(".next-lightbox").hidden = true;
+      this.element.querySelector(".next-lightbox").remove();
     } else {
-      this.element.querySelector(".next-lightbox").hidden = false;
-      this.element.querySelector(".prev-lightbox").hidden = false;
+      const next = this.element.querySelector(".next-lightbox");
+      const prev = this.element.querySelector(".prev-lightbox");
+      if (!prev || !next) {
+        const button = document.createElement("button");
+        button.setAttribute("aria-label", `${!prev ? "précédent" : "suivant"}`);
+        button.setAttribute("tabindex", 0);
+        button.classList.add(`${!prev ? "prev" : "next"}-lightbox`);
+        button.innerHTML = `<span aria-hidden="true" class="fa fa-chevron-${
+          !prev ? "left" : "right"
+        }"></span>`;
+        this.element.querySelector(".modal-body").appendChild(button);
+        if (!next) {
+          button.addEventListener("click", this.next.bind(this));
+        }
+        if (!prev) {
+          button.addEventListener("click", this.prev.bind(this));
+        }
+      }
     }
+    this.setFocusable();
   }
 
   loop(e) {
